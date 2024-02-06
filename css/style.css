@@ -1,0 +1,142 @@
+:root{
+    --White: hsl(0, 0%, 100%);
+    --Light-pink: #f9eeff;
+    --Grayish-purple: hsl(292, 16%, 49%);
+    --Dark-purple: hsl(292, 42%, 14%);
+}
+
+html {
+    font-size: 62.5%;
+    box-sizing: border-box;    
+}
+*, *:before, *:after {
+    box-sizing: inherit;
+}
+
+@font-face{
+font-family: 'Work-Sans';
+src: url('../assets/fonts/WorkSans-VariableFont_wght.ttf');
+}
+
+body{
+    font-size: 16px; /* 1rem=10px */
+    font-family: 'Work-Sans', sans-serif;   
+    background-color: var(--Light-pink);
+    background-image: url("../assets/images/background-pattern-mobile.svg");
+    background-repeat: no-repeat;
+    background-size: 100% auto; 
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+main{
+    background-color: var(--White);
+    border-radius: 2rem;
+    margin-top: 26rem;
+    width: 90%;
+    padding: 3rem;    
+    -webkit-box-shadow: 0px 0px 57px 0px rgba(0,0,0,0.26);
+    -moz-box-shadow: 0px 0px 57px 0px rgba(0,0,0,0.26);
+    box-shadow: 0px 0px 57px 0px rgba(0,0,0,0.26);
+}
+
+h1{
+    font-size: 6.5rem;
+    margin-top: 1rem;
+    margin-bottom: 2rem;
+    max-width: 80%;
+}
+h2{
+    font-size: 3.5rem;
+}
+
+.star{
+    margin-right: 2rem;
+    width: 5rem;
+}
+
+.ask-title{
+    width: 85%;
+}
+
+.icon-container{
+    width: 15%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+.icon-container img{ 
+    width: 6rem;  
+}
+
+.answer {
+    overflow: hidden;
+    max-height: 0;
+    transition: max-height 0.3s ease-out; 
+}
+
+.answer.show {
+    display: block;
+    max-height: 25rem; 
+}
+hr{
+    border:0;
+    margin:0;
+    width:100%;
+    height:1px;
+    background-color: var(--Light-pink);
+}
+.answer p{
+    color: var(--Grayish-purple);
+    font-size: 3rem;
+    line-height: 4rem;
+    margin-top: 1rem;
+    margin-bottom: 2.5rem;
+    
+}
+
+.attribution{
+    margin-top: 2rem;
+}
+
+@media(min-width: 768px){
+    body{
+        background-image: url("../assets/images/background-pattern-desktop.svg");
+    }
+    main{        
+        margin-top: 15rem;
+        width: 60rem;
+    }
+
+    h2{
+        font-size: 1.8rem;
+    }
+
+    h2:hover{
+        cursor: pointer; 
+        color: #911ac2;
+    }
+
+    .icon-container img{ 
+        width: 3rem;  
+    }
+    
+    .icon-container img:hover{
+        cursor: pointer; 
+    }
+
+    .answer p{
+        font-size: 1.8rem;
+        line-height: 2.3rem        
+    }
+    
+}
+
+/* Utilities */
+
+.flex{
+    display: flex;
+}

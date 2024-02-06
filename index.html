@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- displays site properly based on user's device -->
+
+  <link rel="icon" type="image/png" sizes="32x32" href="./assets/images/favicon-32x32.png">
+  <link rel="stylesheet" href="css/style.css">
+  <title>Frontend Mentor | FAQ accordion</title>
+
+  <!-- Feel free to remove these styles or customise in your own stylesheet 👍 -->
+  <style>
+    .attribution { font-size: 11px; text-align: center; }
+    .attribution a { color: hsl(228, 45%, 44%); }
+  </style>
+</head>
+<body>
+ 
+  <main>
+    <div class="flex">
+      <img class="star" src="assets/images/icon-star.svg" alt="">
+      <h1>FAQs</h1>
+    </div>
+    
+    <section class="ask">
+      <div class="plus flex">
+        <div class="plus ask-title">
+          <h2>What is Frontend Mentor, and how will it help me?</h2>
+        </div>        
+        <div class="icon-container">
+          <img class="plus" src="assets/images/icon-plus.svg" alt="">
+        </div>  
+      </div>
+      <div class="answer">
+        <p>
+          Frontend Mentor offers realistic coding challenges to help developers improve their 
+          frontend coding skills with projects in HTML, CSS, and JavaScript. It's suitable for 
+          all levels and ideal for portfolio building.
+        </p>
+      </div>
+      
+    </section>
+    <section class="ask">
+      <hr>
+      <div class="plus flex">
+        <div class="ask-title">
+          <h2>Is Frontend Mentor free?</h2> 
+        </div>
+        <div class="icon-container">
+          <img  class="plus" src="assets/images/icon-plus.svg" alt="">
+        </div>       
+      </div>
+      <div class="answer">
+        <p>
+          Yes, Frontend Mentor offers both free and premium coding challenges, with the free 
+          option providing access to a range of projects suitable for all skill levels.
+        </p>
+      </div>
+      
+    </section>
+    <section class="ask">
+      <hr>
+      <div class="plus flex">
+        <div class="ask-title">
+          <h2>Can I use Frontend Mentor projects in my portfolio?</h2>
+        </div>        
+        <div class="icon-container">
+          <img class="plus" src="assets/images/icon-plus.svg" alt="">
+        </div>  
+      </div>
+      <div class="answer">
+        <p>
+          Yes, you can use projects completed on Frontend Mentor in your portfolio. It's an excellent
+          way to showcase your skills to potential employers!
+        </p>
+      </div>
+      
+    </section>
+    <section class="ask">
+      <hr>
+      <div class="plus flex">
+        <div class="ask-title">
+          <h2>How can I get help if I'm stuck on a challenge?</h2>
+        </div>        
+        <div class="icon-container">
+          <img class="plus" src="assets/images/icon-plus.svg" alt="">
+        </div>  
+      </div>
+      <div class="answer">
+        <p>
+          The best place to get help is inside Frontend Mentor's Discord community. There's a help 
+          channel where you can ask questions and seek support from other community members.
+        </p>
+      </div>
+      
+    </section>
+  </main>
+ 
+  <div class="attribution">
+    <p>Challenge by <a href="https://www.frontendmentor.io?ref=challenge" target="_blank">Frontend Mentor</a>. 
+      Coded by <a href="https://github.com/Waxupex">Waxupex</a>.</p>    
+  </div>
+  
+  <script>
+    document.addEventListener("DOMContentLoaded", function() {
+    //Select all elements with ask class and store on var coll
+    var coll = document.querySelectorAll(".ask");
+     
+      //iterate each over element of coll
+      coll.forEach(function(item) {
+        //select btn with plus class
+        var btn = item.querySelector(".plus")
+        //select div with answer class;
+        var answer = item.querySelector(".answer");
+        //add event listener click to btn
+        btn.addEventListener("click", function() {          
+          answer.classList.toggle("show");
+          // verify if btn include icon-plus
+          var img = btn.querySelector('img');
+          if (img.src.includes("assets/images/icon-plus.svg")) {
+            img.src = "assets/images/icon-minus.svg";
+          } else {
+            img.src = "assets/images/icon-plus.svg"; 
+          }
+        });
+      });
+    });    
+  </script>
+  
+</body>
+</html>
